@@ -55,7 +55,7 @@ Once everything is set up:
 
 ## Files Explained
 
-### Arduino Sketch (`sketch_oct24a.ino`)
+### Arduino Sketch (`arduinoa.ino`)
 - This sketch runs on the Arduino and reads data from the ultrasonic sensor. It sends the sensor readings to the MQTT broker.
 
 ### Server Script (`server_mqtt.py`)
@@ -97,3 +97,44 @@ This allows users to quickly see if the sensor readings are in a safe or concern
 
 ## Conclusion
 This project is a practical example of real-time data monitoring using an ultrasonic sensor and MQTT. The combination of Socket.IO for live updates and MQTT for communication makes this a versatile setup for Internet of Things (IoT) applications.
+
+
+
+```bash
+Computer
+  │
+  │ USB Cable
+  │
+  ▼
+Adafruit Metro Mini
+  ┌────────────────────────────┐
+  │                            │
+  │   ┌──────────────┐          │
+  │   │  Trig Pin 9  │──────────┼──> Trig Pin on Ultrasonic Sensor
+  │   └──────────────┘          │
+  │                            │
+  │   ┌──────────────┐          │
+  │   │ Echo Pin 10  │──────────┼──> Echo Pin on Ultrasonic Sensor
+  │   └──────────────┘          │
+  │                            │
+  │   ┌──────────────┐          │
+  │   │    GND       │──────────┼──> Ground for Ultrasonic Sensor
+  │   └──────────────┘          │
+  │                            │
+  │   ┌──────────────┐          │
+  │   │   5V (USB)   │──────────┼──> Power for Ultrasonic Sensor
+  │   └──────────────┘          │
+  └────────────────────────────┘
+
+Ultrasonic Sensor (HC-SR04)
+  ┌────────────────────────────┐
+  │  │                         │
+  │  │ Trig Pin (from Pin 9) ───> Send trigger signal
+  │  │                         │
+  │  │ Echo Pin (to Pin 10) ────> Receive echo signal
+  │  │                         │
+  │  │ Power (from 5V)          ──> Power the sensor
+  │  │                         │
+  │  │ Ground (shared GND)      ──> Connect to GND
+  └────────────────────────────┘
+```
