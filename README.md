@@ -55,7 +55,7 @@ Once everything is set up:
 
 ## Files Explained
 
-### Arduino Sketch (`arduinoa.ino`)
+### Arduino Sketch (`arduino.ino`)
 - This sketch runs on the Arduino and reads data from the ultrasonic sensor. It sends the sensor readings to the MQTT broker.
 
 ### Server Script (`server_mqtt.py`)
@@ -66,12 +66,12 @@ Once everything is set up:
 2. **`client.js`**:
    - This JavaScript file listens for incoming data from the server (using Socket.IO).
    - It parses the MQTT message payload and displays the sensor value in real time on the web page.
-   - It includes a **color mapping function** to visually indicate the range of the sensor value. For example:
+   - It includes a **color mapping function** to indicate the range of the sensor value visually. For example:
      - Low values appear **green**.
      - Medium values appear **yellow**.
      - High values appear **red**, providing a quick visual alert if necessary.
   
-3. **`socket.io.js`**: The Socket.IO client-side library responsible for real-time communication with the server.
+3. **`socket.io.js`**: The Socket.IO client-side library is responsible for real-time communication with the server.
 
 ---
 
